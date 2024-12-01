@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculdade Salem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head> 
+<body>
+
+    <header class="header">
+        <!-- Logo do Menu -->
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo-topo-white-1.png" alt="Logo" class="logo-img">
+            </div>
+
+            <!-- Menu -->
+            <nav>
+                <ul class="menu">
+                    <li class="menu-item">
+                        <span class="menu-link">Cursos</span>
+                        <div class="dropdown">
+                            <div class="dropdown-secao">
+                                <h4 class="dropdown-titulo">Graduação</h4>
+                                <a href="#">Bacharelado em Teologia</a>
+                            </div>
+
+                            <div class="dropdown-secao">
+                                <h4 class="dropdown-titulo">Pós-graduação</h4>
+                                <a href="#pos">Neuropsicopedagogia EAD</a>
+                                <a href="#pos">Ensino Religioso</a>
+                                <a href="#pos">Educação Infantil</a>
+                                <a href="#pos">Marketing Digital</a>
+                                <a href="#pos">Docência Superior</a>
+                                <a href="#pos">Psicologia Pastoral</a>
+                            </div>
+
+                            <div class="dropdown-secao">
+                                <h4 class="dropdown-titulo">Cursos Livres</h4>
+                                <a href="#CurLiv"> IBBC - Curso Livre de Teologia </a>
+                            </div>
+                        </div> 
+                    </li>
+
+                    <li class="menu-item">
+                        <span class="menu-link">Suporte</span>
+                        <div class="dropdown">
+                            <div class="dropdown-secao">
+                                <a href="#FAQ">FAQ</a>
+                                <a href="#FAQ">Blog Educacional</a>
+                                <a href="#FAQ">Central de Atendimento</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <span class="menu-link">Portal</span>
+                        <div class="dropdown">
+                            <div class="dropdown-secao">
+                                <a href="https://ead.faculdadesalem.edu.br">Graduação</a>
+                                <a href="https://facsalem.contentusdigital.com.br/login">Pós-Graduação</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>
+    
+    <!-- Seção Carrossel de Imagens -->
+<section class="image-slider-section">
+    <div class="image-slider-wrapper">
+        <div id="image-slider" class="image-slider">
+            <div class="image">
+                <img src="assets/images/Artboard 1.png" alt="Imagem 1">
+            </div>
+            <div class="image">
+                <img src="assets/images/Artboard 2.png" alt="Imagem 2">
+            </div>
+            <div class="image">
+                <img src="assets/images/Artboard 3.png" alt="Imagem 3">
+            </div>
+            <div class="image">
+                <img src="assets/images/Artboard 4.png" alt="Imagem 4">
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles do Slider -->
+    <div class="image-slider-controls">
+        <button class="prev-slide" aria-label="Imagem anterior">←</button>
+        <button class="next-slide" aria-label="Próxima imagem">→</button>
+    </div>
+</section>
+
+   <!-- Seção inicial -->
+<section class="content-section">
+    <!-- Título e Subtítulo -->
+    <h2 class="section-title">Transforme seu Futuro com a Faculdade Salém!</h2>
+    <p class="section-subtitle">Graduação, Pós-graduação e Cursos Livres com excelência e acessibilidade em EAD.</p>
+
+    <!-- Destaques -->
+    <div class="highlights">
+        <div class="highlight-item">
+            <a href="#gradu">
+                <h3>Graduação</h3>
+            </a>
+            <p>Bacharelado em Teologia.</p>
+        </div>
+        <div class="highlight-item">
+            <a href="#pos">
+                <h3>Pós-Graduação</h3>
+            </a>
+            <p>Especializações para seu crescimento profissional.</p>
+        </div>
+        <div class="highlight-item">
+            <a href="#CurLiv">
+                <h3>Cursos Livres</h3>
+            </a>
+            <p>Conhecimento prático em várias áreas.</p>
+        </div>
+    </div>
+
+    <!-- Botão de Matrícula -->
+    <div class="cta-button">
+        <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank" class="button">Faça sua Matrícula Agora</a>
+    </div>
+</section>
+
+<!-- Depoimentos dos Alunos -->
+<section class="testimonials-section">
+    <h3>O que nossos alunos dizem:</h3>
+    <div class="testimonials-container">
+        <div class="testimonial">
+            <p class="testimonial-text">"Este curso mudou minha vida! A metodologia é incrível!"</p>
+            <p class="testimonial-name">- João Silva</p>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"Aprendi muito com os professores, que são super qualificados!"</p>
+            <p class="testimonial-name">- Maria Souza</p>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"A plataforma de ensino é muito fácil de usar. Amei!"</p>
+            <p class="testimonial-name">- Carlos Pereira</p>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"As aulas são dinâmicas e sempre atualizadas com o mercado!"</p>
+            <p class="testimonial-name">- Ana Costa</p>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"Consegui um estágio graças ao aprendizado aqui!"</p>
+            <p class="testimonial-name">- Lucas Almeida</p>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"O suporte técnico é rápido e eficiente, recomendo a todos!"</p>
+            <p class="testimonial-name">- Juliana Santos</p>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"A experiência de aprendizado foi única, me sinto mais preparado."</p>
+            <p class="testimonial-name">- Rafael Oliveira</p>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"O conteúdo é completo e muito bem explicado!"</p>
+            <p class="testimonial-name">- Beatriz Ramos</p>
+        </div>
+        <div class="testimonial">
+            <p class="testimonial-text">"Eu recomendo a todos que buscam qualidade de ensino!"</p>
+            <p class="testimonial-name">- Bruno Martins</p>
+        </div>
+    </div>
+</section>
+        
+         <!-- Seção de Impacto -->
+<!-- 
+<section class="impacto-numeros">
+    <h3>Impacto</h3>
+    <p>Aqui você pode incluir estatísticas impressionantes sobre o impacto da sua instituição, como número de alunos formados, cursos concluídos, etc.</p>
+</section>
+-->
+<!-- Seção de Parcerias -->
+<!--<section class="parcerias">
+
+
+    <h3>Parcerias</h3>
+    <div class="parcerias-logos">
+        <a href="https://link1.com" target="_blank">
+            <img src="logo1.png" alt="Logo da Parceria 1">
+        </a>
+        <a href="https://link2.com" target="_blank">
+            <img src="logo2.png" alt="Logo da Parceria 2">
+        </a>
+        <a href="https://link3.com" target="_blank">
+            <img src="logo3.png" alt="Logo da Parceria 3">
+        </a>
+        <a href="https://link4.com" target="_blank">
+            <img src="logo4.png" alt="Logo da Parceria 4">
+        </a>
+    </div>
+</section> -->
+
+
+<!-- Seção de Graduação -->
+
+<section id="gradu">
+    <h1 class="h1gra">Graduação</h1>
+    <div class="card-curso">
+        <div class="card-banner">
+            <span class="tipo-curso">Bacharelado</span>
+            <h3 class="nome-curso">Teologia</h3>
+            <ul class="modalidades">
+                <li>Aprofunde sua fé e conhecimento teológico.</li>
+                <li"><em>Prepare-se para liderar com propósito com um curso que combina tradição e inovação.</em></li>
+            </ul>
+        </div>
+        <div class="card-detalhes">
+            <span class="destaque">EaD</span>
+            <p class="duracao">Duração: 03 Anos</p>
+            <ul class="modalidades">
+                <li><em style="color: black;">- Amplo entendimento bíblico.</em></li>
+                <li><em style="color: black;">- Preparação para atuação ministerial.</em></li>
+                <li><em style="color: black;">- Formato EaD flexível.</em></li>
+                <li>            <a href="assets/PDF/Matriz Curricular Bacharel Teologia Salém..pdf">Matriz Curricular</a></li>
+            </ul>
+            <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+                <button class="pos-btn-detalhes">Inscreva-se agora! <span>→</span></button>
+            </a>  
+        </div>
+    </div>
+</section>
+
+
+         <!-- Seção de Pós-Graduação -->
+   
+<section class="pos-graduacao-secao">
+    <div class="cabecalho-pos">
+        <h2>Pós-Graduação: Alavanque Sua Carreira</h2>
+        <p class="subtitulo">
+            Em um mundo cada vez mais competitivo, a Pós-graduação é o passo decisivo para alcançar o próximo nível em sua carreira. Não se trata apenas de adquirir mais conhecimento, mas de ganhar destaque no mercado, divulgar especializações e abrir portas para novas oportunidades.
+        </p>
+    </div>
+
+    <!-- Benefícios -->
+    <div class="beneficios">
+        <div class="beneficio-item">
+            <h3>Destaque Profissional</h3>
+            <p>Seja reconhecido no mercado com habilidades específicas e atualizadas.</p>
+        </div>
+        <div class="beneficio-item">
+            <h3>Aprimoramento Pessoal</h3>
+            <p>Desenvolva competências além do técnico, como pensamento crítico e capacidade de inovação.</p>
+        </div>
+        <div class="beneficio-item">
+            <h3>Expansão de Rede</h3>
+            <p>Conecte-se com outros profissionais e professores renomados, criando uma rede sólida de networking.</p>
+        </div>
+        <div class="beneficio-item">
+            <h3>Flexibilidade e Qualidade</h3>
+            <p>Com nossos cursos EaD, estude onde e quando quiser, sem abrir mão da excelência acadêmica.</p>
+        </div>
+    </div>
+    
+    <!-- Conclusão e CTA -->
+    <div class="conclusao">
+        <p>Na Faculdade Salém, nossa Pós-graduação vai além do diploma: ela transforma vidas e carreiras.</p>
+    </div>
+    <div class="cta-pos">
+        <h3>Invista em você e no seu futuro.</h3>
+        <p>Escolha sua Pós-graduação e matricule-se agora!</p>
+    </div>
+
+</section>
+
+<!-- Contêiner dos Cards de Pós-Graduação -->
+    <div id="pos">
+<section class="pos-container-cards">
+    <!-- Card 1 -->
+    <div class="pos-card">
+        <div class="pos-card-banner">
+            <span class="pos-tipo-curso">Especialização</span>
+            <h3 class="pos-nome-curso">Neuropsicopedagogia</h3>
+            <ul class="modalidades">
+                <li><em>Compreenda o cérebro e inove no ensino.</em></li>
+            </ul>
+        </div>
+        <div class="pos-card-detalhes">
+            <span class="pos-destaque">EaD</span>
+            <p class="pos-duracao">Duração: 12 meses</p>
+            <p class="pos-turno">Turno: Flexível</p>
+            <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+                <button class="pos-btn-detalhes">Matricule-se <span>→</span></button>
+            </a>
+            <button onclick="window.open('assets/PDF/Neuropsicopedagogia.pdf', '_blank')" class="pos-btn-detalhes">
+                Grade Curricular
+            </button>
+            
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="pos-card">
+        <div class="pos-card-banner">
+            <span class="pos-tipo-curso">Especialização</span>
+            <h3 class="pos-nome-curso">Ensino Religioso</h3>
+            <ul class="modalidades">
+                <li><em>Ensino com propósito e impacto em vidas.</em></li>
+            </ul>
+        </div>
+        <div class="pos-card-detalhes">
+            <span class="pos-destaque">EaD</span>
+            <p class="pos-duracao">Duração: 12 meses</p>
+            <p class="pos-turno">Turno: Flexível</p>
+            <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+                <button class="pos-btn-detalhes">Matricule-se <span>→</span></button>
+            </a>  
+            <button onclick="window.open('assets/PDF/Fundamentos para o Ensino Religioso.pdf', '_blank')" class="pos-btn-detalhes">
+                Grade Curricular
+            </button>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="pos-card">
+        <div class="pos-card-banner">
+            <span class="pos-tipo-curso">Especialização</span>
+            <h3 class="pos-nome-curso">Educação Infantil</h3>
+            <ul class="modalidades">
+                <li><em>Transforme a educação nas fases iniciais.</em></li>
+            </ul>
+        </div>
+        <div class="pos-card-detalhes">
+            <span class="pos-destaque">EaD</span>
+            <p class="pos-duracao">Duração: 12 meses</p>
+            <p class="pos-turno">Turno: Flexível</p>
+            <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+                <button class="pos-btn-detalhes">Matricule-se <span>→</span></button>
+            </a>  
+            <button onclick="window.open('assets/PDF/EDUCAÇÃO INFANTIL E ANOS INICIAIS DO ENSINO FUNDAMENTAL.pdf', '_blank')" class="pos-btn-detalhes">
+                Grade Curricular
+            </button>
+        </div>
+    </div>
+</id=>
+
+<section class="pos-container-cards">
+    <!-- Card 4 -->
+    <div class="pos-card">
+        <div class="pos-card-banner">
+            <span class="pos-tipo-curso">Especialização</span>
+            <h3 class="pos-nome-curso">Marketing Digital</h3>
+            <ul class="modalidades">
+                <li><em>Domine o mercado digital.</em></li>
+            </ul>
+        </div>
+        <div class="pos-card-detalhes">
+            <span class="pos-destaque">EaD</span>
+            <p class="pos-duracao">Duração: 12 meses</p>
+            <p class="pos-turno">Turno: Flexível</p>
+            <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+                <button class="pos-btn-detalhes">Matricule-se <span>→</span></button>
+            </a>  
+            <button onclick="window.open('assets/PDF/Excelência em Marketing Digital.pdf', '_blank')" class="pos-btn-detalhes">
+                Grade Curricular
+            </button>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="pos-card">
+        <div class="pos-card-banner">
+            <span class="pos-tipo-curso">Especialização</span>
+            <h3 class="pos-nome-curso">Docência Superior</h3>
+            <ul class="modalidades">
+                <li><em>Inspire no ensino acadêmico.</em></li>
+            </ul>
+        </div>
+        <div class="pos-card-detalhes">
+            <span class="pos-destaque">EaD</span>
+            <p class="pos-duracao">Duração: 12 meses</p>
+            <p class="pos-turno">Turno: Flexível</p>
+            <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+                <button class="pos-btn-detalhes">Matricule-se <span>→</span></button>
+            </a>  
+            <button onclick="window.open('assets/PDF/DOCÊNCIA EM ENSINO SUPERIOR.pdf', '_blank')" class="pos-btn-detalhes">
+                Grade Curricular
+            </button>
+        </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="pos-card">
+        <div class="pos-card-banner">
+            <span class="pos-tipo-curso">Especialização</span>
+            <h3 class="pos-nome-curso">Psicologia Pastoral</h3>
+            <ul class="modalidades">
+                <li><em>Apoie e restaure vidas.</em></li>
+            </ul>
+        </div>
+        <div class="pos-card-detalhes">
+            <span class="pos-destaque">EaD</span>
+            <p class="pos-duracao">Duração: 12 meses</p>
+            <p class="pos-turno">Turno: Flexível</p>
+            <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+                <button class="pos-btn-detalhes">Matricule-se <span>→</span></button>
+            </a>  
+            <button onclick="window.open('assets/PDF/PSICOLOGIA PASTORAL.pdf', '_blank')" class="pos-btn-detalhes">
+                Grade Curricular
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Cursos Livres -->
+<div id="CurLiv">
+<section class="cursos-livres-secao">
+    <div class="cabecalho-cursos-livres">
+        <h2>Curso Livre de Teologia - IBBC</h2>
+            <!-- Destaques -->
+    <div class="destaques">
+        <div class="destaque-item">
+            <div class="icone-destaque">
+                <img src="assets/images/distintivo.png" alt="Conteúdo acessível">
+            </div>
+            <h4>Conteúdo acessível e enriquecedor.</h4>
+        </div>
+        <div class="destaque-item">
+            <div class="icone-destaque">
+                <img src="assets/images/distintivo.png" alt="Foco no crescimento">
+            </div>
+            <h4>Foco no crescimento pessoal e ministerial.</h4>
+        </div>
+    </div>
+        <p class="subtitulo">
+            Ideal para quem busca conhecimento teológico profundo e prático. Este curso foi desenvolvido para quem deseja expandir seus conhecimentos e habilidades na área da Teologia.
+        </p>
+    </div>
+</section>
+
+
+            <!-- Módulos do Curso Livre -->
+<div class="modulos">
+    <div class="modulo-item">
+        <h3>Módulo 1: Fundamentos Teológicos</h3>
+        <p>Explore os princípios básicos da Teologia, abordando as bases históricas e bíblicas.</p>
+    </div>
+    <div class="modulo-item">
+        <h3>Módulo 2: Crescimento Espiritual</h3>
+        <p>Desenvolva práticas espirituais que promovem o crescimento individual e ministerial.</p>
+    </div>
+    <div class="modulo-item">
+        <h3>Módulo 3: Habilidades Práticas</h3>
+        <p>Aprenda habilidades práticas para aplicar o conhecimento teológico no cotidiano e no ministério.</p>
+    </div>
+    <div class="modulo-item">
+        <h3>Módulo 4: Visão Ampliada</h3>
+        <p>Adquira uma compreensão mais ampla da Teologia e sua aplicação no mundo atual.</p>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="cta-cursos-livres">
+    <h3>Invista no seu conhecimento teológico!</h3>
+    <p>Matricule-se no Curso Livre de Teologia IBBC e comece sua jornada de aprendizado agora mesmo.</p>
+    <a href="https://wa.me/5542991234525" class="btn-cta">Matricule-se Agora</a>
+</div>
+
+<!-- Seção de Suporte -->
+<section id="FAQ" class="faq-blog-atendimento">
+    <!-- FAQ -->
+    <div class="faq">
+        <h3>FAQ: Respostas rápidas sobre cursos e suporte</h3>
+        <p>Encontre respostas para as dúvidas mais comuns sobre nossos cursos, suporte e muito mais. Aqui, você encontra o que precisa para tomar a melhor decisão.</p>
+        <button class="cta-faq">Saiba mais</button>
+    </div>
+
+    <!-- Blog Educacional -->
+    <div class="blog-educacional">
+        <h3>Blog Educacional</h3>
+        <p>Nesse espaço, vamos inserir os artigos dos professores e alunos, além de dicas acadêmicas para o seu desenvolvimento educacional e profissional.</p>
+        <button class="cta-blog">Acesse o Blog</button>
+    </div>
+
+    <!-- Central de Atendimento -->
+    <div id="FAQ" class="central-atendimento">
+        <h3>Central de Atendimento</h3>
+        <p>Tem alguma dúvida? Nosso time está pronto para ajudá-lo com qualquer questão. Entre em contato com a nossa central e tenha respostas rápidas.</p>
+        <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+            <button class="cta-atendimento">Entre em contato agora!</button>
+        </a>        
+    </div>
+</section>
+
+    
+ <!-- Polos da faculdade -->
+ <section class="polos">
+    <h2>Polos de Atendimento</h2>
+
+    <div class="polos-container">
+        <div class="polo" onclick="mudarMapa(0)">
+            <h3>Polo Curitiba</h3>
+            <p><strong>Endereço:</strong> BR-116, 19941 - Pinheirinho</p>
+            <p><strong>Contato:</strong> (42) 99123-4525</p>
+        </div>
+
+        <div class="polo" onclick="mudarMapa(1)">
+            <h3>Polo Canoas</h3>
+            <p><strong>Endereço:</strong> R. Florianópolis, 1902 - Mathias Velho, Canoas - RS</p>
+            <p><strong>Contato:</strong> (42) 99123-4525</p>
+        </div>
+
+        <div class="polo" onclick="mudarMapa(2)">
+            <h3>Polo Diadema</h3>
+            <p><strong>Endereço:</strong> Av. Antônio Piranga, 123 sala 08 - Centro, Diadema - SP</p>
+            <p><strong>Contato:</strong> (42) 99123-4525</p>
+        </div>
+
+        <div class="polo" onclick="mudarMapa(3)">
+            <h3>Polo Ariquemes</h3>
+            <p><strong>Endereço:</strong> Rua Cardeal, 1785 - Setor 02, Ariquemes - RO</p>
+            <p><strong>Contato:</strong> (42) 99123-4525</p>
+        </div>
+
+        <div class="polo" onclick="mudarMapa(4)">
+            <h3>Polo Telêmaco Borba</h3>
+            <p><strong>Endereço:</strong> Rua Professora Edith Gordon, 412 - Centro, Telêmaco Borba - PR</p>
+            <p><strong>Contato:</strong> (42) 99123-4525</p>
+        </div>
+    </div>
+</section>
+
+
+            <!-- Mapas -->
+<section class="map">
+    <h2>Localização</h2>
+    <div class="meia_coluna_contato">
+        <div class="mapa">
+            <!-- Mapa com iframe -->
+            <iframe 
+            id="mapa_iframe" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3600.2124001557386!2d-49.30195038227947!3d-25.531300932705694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dcfc8c1ee754a9%3A0x12fbab5124e27157!2sCuritiba%20-%20State%20of%20Paran%C3%A1%2C%2081690-400!5e0!3m2!1sen!2sbr!4v1715798988292!5m2!1sen!2sbr&hl=pt&language=pt">
+        </iframe>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <!-- Contato -->
+        <div class="contact">
+            <p><strong>Entre em contato:</strong></p>
+            <form action="mailto:email@exemplo.com" method="get">
+                <input type="email" placeholder="Seu email" name="email" required>
+                <button type="submit">Enviar</button>
+            </form>
+            <p><strong>E-mail:</strong> suporte@faculdadesalem.edu.br</p>
+            <p><strong>E-mail:</strong> secretaria@faculdadesalem.edu.br</p>
+            <p><strong>Telefone:</strong> (42) 3272-1374</p>
+        </div>
+
+        <!-- Redes sociais -->
+        <div class="social-media">
+            <p><strong>Siga-nos:</strong></p>
+            <a href="https://www.facebook.com/faculdadesalem" target="_blank">
+                <img src="assets/images/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=5542991234525&text&type=phone_number&app_absent=0" target="_blank">
+                <img src="assets/images/whatsapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://www.instagram.com/facsalem/" target="_blank">
+                <img src="assets/images/instagram.png" alt="Instagram">
+            </a>
+        </div>
+    </div>
+
+    <!-- Direitos reservados -->
+    <div class="reserved">
+        <p>&#169; 2024 Todos os direitos reservados</p>
+    </div>
+</footer>
+
+        <script src="java.js"></script>
+</body>
+</html>
