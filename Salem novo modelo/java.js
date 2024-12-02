@@ -85,9 +85,23 @@ function selecionarPolo(element) {
 
     // Adiciona a classe 'selected' ao polo clicado
     element.classList.add('selected');
-  }
+}
 
-  //MOBILE
+        // Mostra o pop-up ao carregar a página
+        window.onload = function() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        };
 
+        // Fecha o pop-up e redireciona ao clicar na imagem, abrindo em uma nova aba
+        document.getElementById('popupImage').onclick = function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            window.open("https://ead.faculdadesalem.edu.br/login/signup.php", "_blank");
+        };
 
-
+        // Também permite fechar clicando fora do pop-up (overlay)
+        document.getElementById('overlay').onclick = function() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        };
