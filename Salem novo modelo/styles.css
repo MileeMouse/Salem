@@ -1099,15 +1099,97 @@ footer {
     .faq-blog-atendimento{
         display:none;
     }
-    .polos-container p{
-        display:none;
-    }
-    .polos-container{
-        flex-direction: column;
+    .polos-container p {
+        display: none; /* Esconde os parágrafos */
     }
 
-    .footer-container{
-        flex-direction: column;
+    .polos-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas no layout */
+        gap: 20px; /* Espaçamento entre as boxes */
+        justify-content: center; /* Centraliza as colunas */
+        padding: 0 10px; /* Adiciona espaço interno nas laterais */
+    }
+
+    .polo {
+        width: 100%; /* Reduz ligeiramente a largura para criar espaço nas laterais */
+        max-width: 60%; /* Garante que cada box ocupe no máximo 40% da tela */
+        margin: 0 auto; /* Centraliza as boxes individualmente */
+        text-align: center; /* Centraliza o conteúdo dentro de cada box */
+    }
+
+    .polo h3 {
+        font-size: 18px; /* Tamanho de texto responsivo */
+        margin-bottom: 10px; /* Espaço entre o título e o restante do conteúdo */
+    }
+
+    .footer-container {
+        flex-direction: column; /* Mantém flex-direction específico */
+        align-items: center; /* Centraliza o conteúdo no footer */
+    }   
+
+    .depoimentos-container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .depoimentos-container h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .depoimentos-carousel {
+        display: flex;
+        overflow: hidden; /* Oculta os depoimentos que não estão ativos */
+        justify-content: center;
+        position: relative;
+    }
+
+    .depoimento {
+        min-width: 100%; /* Mostra apenas um depoimento por vez */
+        box-sizing: border-box;
+        padding: 15px;
+        background-color: #f9f9f9;
+        margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .depoimento-text {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 10px;
+    }
+
+    .autor {
+        font-size: 14px;
+        font-style: italic;
+        color: #888;
+    }
+
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #fff;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: #eee;
     }
     
 }
