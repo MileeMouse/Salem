@@ -596,6 +596,19 @@ a {
 }
 
 /* Botões */
+.btn-detalhes-A{
+    background-color: var(--cor-destaque);
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
 .btn-detalhes {
     background-color: var(--cor-destaque);
     color: white;
@@ -1190,7 +1203,7 @@ footer {
 
     .prev:hover, .next:hover {
         background-color: #eee;
-    }
+    }   
     
 }
 
