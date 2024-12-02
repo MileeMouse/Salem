@@ -86,3 +86,8 @@ function selecionarPolo(element) {
     // Adiciona a classe 'selected' ao polo clicado
     element.classList.add('selected');
   }
+
+  //MOBILE
+
+
+

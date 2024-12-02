@@ -1,0 +1,11 @@
+/* Estilos básicos */
+/* Mostrar o menu-toggle apenas em telas menores */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+}

@@ -926,56 +926,56 @@ button.cta-faq:hover, button.cta-blog:hover, button.cta-atendimento:hover {
     margin-top: 20px;
 }
 
-/* Estilo da seção de polos */
-.polos {
-    padding: 40px;
-    background-color: var(--cor-destaque);
-}
+    /* Estilo da seção de polos */
+    .polos {
+        padding: 40px;
+        background-color: var(--cor-destaque);
+    }
 
-.polos h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #ffffff;
-}
+    .polos h2 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 30px;
+        color: #ffffff;
+    }
 
-/* Contêiner dos polos - agora são dispostos lado a lado */
-.polos-container {
-    display: flex;
-    flex-direction: row; /* Alinha as divs em linha, lado a lado */
-    gap: 20px; /* Espaçamento entre as divs */
-    justify-content: space-between; /* Espaça uniformemente */
-}
+    /* Contêiner dos polos - agora são dispostos lado a lado */
+    .polos-container {
+        display: flex;
+        flex-direction: row; /* Alinha as divs em linha, lado a lado */
+        gap: 20px; /* Espaçamento entre as divs */
+        justify-content: space-between; /* Espaça uniformemente */
+    }
 
-/* Estilo individual de cada polo */
-.polo {
-    background-color: #fff;
-    padding: 20px;
-    width: 30%; /* Ajustando para ocupar 30% do container, ajustando o layout */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    text-align: center;
-}
+    /* Estilo individual de cada polo */
+    .polo {
+        background-color: #fff;
+        padding: 20px;
+        width: 30%; /* Ajustando para ocupar 30% do container, ajustando o layout */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
 
 
 
-/* Estilo para o polo selecionado */
-.polo.selected {
-    border: 4px solid #0C4470; /* Borda mais escura para destaque */
-}
+    /* Estilo para o polo selecionado */
+    .polo.selected {
+        border: 4px solid #0C4470; /* Borda mais escura para destaque */
+    }
 
-.polo h3 {
-    font-size: 20px;
-    color: #333;
-}
+    .polo h3 {
+        font-size: 20px;
+        color: #333;
+    }
 
-.polo p {
-    text-align: left;
-    font-size: 100%;
-    color: #555;
-}
+    .polo p {
+        text-align: left;
+        font-size: 100%;
+        color: #555;
+    }
 
 /* Efeito de destaque quando o polo é selecionado */
 .polo.destaque {
@@ -1079,7 +1079,38 @@ footer {
     font-size: 12px;
 }
 
+/*MOBILE*/
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        margin-bottom: 10px;
+    }
 
+    .menu {
+        display: none;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+    .card-info-esquerda{
+        display: none;
+    }
+    .faq-blog-atendimento{
+        display:none;
+    }
+    .polos-container p{
+        display:none;
+    }
+    .polos-container{
+        flex-direction: column;
+    }
+
+    .footer-container{
+        flex-direction: column;
+    }
+    
+}
 
 
 
