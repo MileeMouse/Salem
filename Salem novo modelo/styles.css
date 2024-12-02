@@ -1,426 +1,303 @@
-:root {
-    --color-neutral-0: #082C46;
-    --color-neutral-1: #0C456f;
-    --color-neutral-2: #1A97F0;
-    --color-neutral-3: #e4e4e4;
-    --color-neutral-4: #B8B8B8;
-    --color-neutral-5: #FFFFFF;
-    --colot-neutral-6: #F39200;
-    --colot-neutral-7: #BE9909;
-}
-
-* {
+/* Pagina toda */
+*{
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Remove o scroll horizontal */
-    background-color: var(--color-neutral-5); /* Fundo branco */
 }
 
 html {
     scroll-behavior: smooth;
 }
+  
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
 
-/* Estilo geral do header */
-.header {
-    background-color: #0C4470; /* Cor de fundo do menu */
-    display: flex;
-    justify-content: flex-end; /* Alinha o menu à direita */
-    position: relative; /* Para que o z-index funcione */
-    z-index: 20; /* Garante que o header fique acima do carrossel */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Container que agrupa a imagem e o menu */
+/* Aplicar Montserrat para títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Deixe os títulos em negrito para destaque */
+    margin: 0; /* Para remover margens padrão, opcional */
+}
+
+/* Aplicar Poppins para parágrafos */
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular para boa leitura */
+    line-height: 1.6; /* Espaçamento entre linhas para melhorar a legibilidade */
+    margin: 0 0 1em; /* Margem inferior para espaçamento */
+}
+
+:root {
+    --cor-principal: #0C4470;  /* Cor principal */
+    --cor-secundaria: #3F7EA6;  /* Cor secundária */
+    --cor-destaque: #FF8C00;  /* Cor de destaque*/
+    --cor-destaque2: #F0B332;
+    --cor-titulo: black;  /* Cor do título */
+    --cor-texto: #333;  /* Cor do texto */
+    --cor-fundo: #f7f9fb;  /* Cor de fundo */
+}
+
+
+/* Estilos gerais do header */
+.header {
+    background-color: var(--cor-principal); /* Fundo escuro */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
 .container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #0C4470;
     width: 100%;
 }
 
-/* Estilo para a imagem da logo */
+/* Logo */
+.logo {
+    flex: 1;
+}
+
 .logo-img {
-    width: 150px; /* Largura fixa para a logo */
-    height: auto; /* Ajuste automático da altura para manter a proporção */
+    height: 50px; /* Ajuste conforme necessário */
+    object-fit: contain;
 }
 
-/* Menu e item do menu */
+/* Menu */
+nav {
+    flex: 3;
+}
+
 .menu {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
     margin: 0;
-    display: flex; /* Alinha os itens do menu horizontalmente */
-    margin-left: 350px; /* Isso empurra o menu para a direita */
-
+    padding: 0;
 }
 
-/* Estilo do item do menu */
 .menu-item {
-    position: relative;
-    margin-right: 30px; /* Espaçamento entre os itens */
+    position: relative; /* Necessário para o dropdown */
 }
 
-/* Estilo do link do menu */
 .menu-link {
-    display: block;
-    padding: 10px 15px;
-    cursor: pointer;
-    color: #fff;
+    color: white;
     text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
 }
 
-/* Hover para links do menu */
-.menu-link:hover,
-.menu-item:focus-within .menu-link {
-    color: white; /* Cor de hover */
+.menu-link:hover {
+    color: var(--cor-destaque); /* Cor do hover */
 }
 
 /* Dropdown */
 .dropdown {
-    display: flex; /* Flexbox para seções lado a lado */
-    justify-content: space-between; /* Espaçamento entre as seções */
-    position: absolute; /* Correção da posição */
-    top: 100%; /* Garante que o dropdown apareça abaixo do item */
-    left: 0px; /* Alinha o dropdown à esquerda do item */
-    background-color: #F5F5F5; /* Cor de fundo do dropdown */
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: none; /* Escondido por padrão */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
-}
-
-/* Estilos para as seções do dropdown */
-.dropdown-secao {
-    margin-right: 50px; /* Aumentando a distância entre as seções */
-}
-
-.dropdown-secao a {
-    display: block;
-    padding: 5px 0;
-    color: #444444;
-    text-decoration: none;
-}
-
-.dropdown-secao a:hover {
-    color: #F39200; /* Cor de hover */
-}
-
-/* Exibe o dropdown ao passar o mouse sobre o item do menu */
-.menu-item:hover .dropdown,
-.menu-item:focus-within .dropdown {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s ease-in-out, visibility 0s 0s;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .menu {
-        flex-direction: column; /* Muda para coluna em telas menores */
-        position: absolute;
-        top: 80px; /* Ajuste para abaixo do header */
-        left: 0;
-        width: 100%;
-        background-color: #0C4470;
-        display: none; /* Oculta o menu inicialmente */
-        text-align: center;
-    }
-
-    .menu-item {
-        margin-right: 0;
-    }
-
-    .menu-item:hover .dropdown {
-        display: block; /* Exibe o dropdown em dispositivos menores */
-    }
-
-    .menu-show {
-        display: flex; /* Torna o menu visível */
-    }
-
-    .menu-link {
-        padding: 15px 20px;
-    }
-
-    .container {
-        flex-direction: column;
-        padding: 20px;
-    }
-}
-
-/* Transições suaves para o dropdown */
-.dropdown {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
-}
-
-.menu-item:hover .dropdown,
-.menu-item:focus-within .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s ease-in-out, visibility 0s 0s;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-/* Menu Links */
-.menu-link {
-    font-size: 20px;
-    color: white;
-    padding: 10px 15px;
-    display: block;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Para transições suaves */
-}
-
-.menu-link:hover {
-    background-color: #ffa94d;
+    position: absolute;
+    top: 100%; /* Abaixo do item pai */
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    z-index: 10;
+    width: max-content;
 }
 
-/* Estilo para a nova seção */
-.content-section {
-    padding: 40px 20px;
-    background-color: #F4F4F4;
-    text-align: center;
-    margin-top: 30px;
-    border-radius: 8px;
-    
-
-}
-
-/* Título e subtítulo */
-.section-title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
+.dropdown-secao {
     margin-bottom: 15px;
 }
 
+.dropdown-secao:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-titulo {
+    margin: 0 0 10px;
+    color: #025373;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.dropdown a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.dropdown a:hover {
+    color: var(--cor-destaque);
+}
+
+.menu-item:hover .dropdown {
+    display: block; /* Mostra o dropdown */
+    animation: dropdown-fade-in 0.3s ease-out;
+}
+
+/* Animação do dropdown */
+@keyframes dropdown-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botão para o portal */
+.header .portal-button {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.header .portal-button:hover {
+    background-color: var(--cor-destaque);
+}
+
+/* Portal Dropdown Container */
+.portal-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Select Dropdown */
+.portal-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Seção Inicial */
+.content-section {
+    background-color: var(--cor-fundo); /* Fundo branco suave */
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: var(--cor-texto);
+    margin-top: 10px;
+}
+
+/* Título e Subtítulo */
+.section-title {
+    font-size: 2rem; /* Tamanho ajustado para delicadeza */
+    font-weight: 600;
+    color: #333; /* Cor intensa para destaque */
+    margin-bottom: 15px; /* Menor espaçamento */
+}
+
 .section-subtitle {
-    font-size: 18px;
-    color: var(--color-neutral-1);
-    margin-bottom: 40px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666; /* Cor suave */
+    margin-bottom: 40px; /* Espaçamento confortável */
 }
 
 /* Destaques */
 .highlights {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    margin-bottom: 40px;
-    flex-wrap: wrap; /* Para garantir que os itens se ajustem em telas menores */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .highlight-item {
-    background-color: #fff;
-    padding: 20px;
-    width: 200px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Alinha o conteúdo dentro dos itens */
-    margin-bottom: 20px; /* Adiciona espaçamento inferior */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Transição suave */
-    cursor: pointer; /* Muda o cursor para indicar interatividade */
+    background-color: #f5d469; /* Fundo alaranjado */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    text-align: center;
+    cursor: pointer;
+    width: 240px; /* Tamanho fixo */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .highlight-item h3 {
-    font-size: 22px;
-    color: #333;
+    font-size: 1.5rem; /* Tamanho ajustado */
+    font-weight: 500;
+    color: #333; /* Contraste escuro */
     margin-bottom: 10px;
 }
 
 .highlight-item p {
-    color: #555;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #444; /* Contraste moderado */
 }
 
+/* Efeito ao Passar o Mouse */
 .highlight-item:hover {
-    transform: scale(1.1); /* Aumenta o tamanho */
-    background-color: #e0e0e0; /* Muda a cor de fundo ao passar o mouse */
+    transform: translateY(-5px); /* Movimentação sutil */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
+    background-color: var(--cor-destaque2); /* Cor alaranjada mais clara */
 }
 
-/* Estilo para o link */
-.highlight-item a {
-    text-decoration: none; /* Remove o sublinhado do link */
-    color: inherit; /* Mantém a cor original do texto */
-}
-
-.highlight-item a:hover {
-    color: #4527a0; /* Cor do texto quando o link é hovered */
+.highlight-item:hover h3, 
+.highlight-item:hover p {
+    color: #222; /* Contraste reforçado */
 }
 
 /* Botão de Matrícula */
+.cta-button {
+    margin-top: 60px; /* Espaçamento maior entre destaques e botão */
+}
+
 .cta-button .button {
-    padding: 15px 30px;
-    background-color: #ffa94d;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    padding: 15px 30px; /* Espaçamento confortável */
+    background-color: #f5d469; /* Botão com mesma cor alaranjada */
+    color: #333; /* Texto escuro para contraste */
+    text-decoration: none;
+    border-radius: 25px; /* Botão arredondado */
+    font-weight: 500;
+    font-size: 1.1rem; /* Tamanho moderado */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efeito do Botão ao Passar o Mouse */
 .cta-button .button:hover {
-    background-color: #ff8c00; /* Cor mais escura para hover */
+    background-color: #f5d469; /* Tom mais claro ao hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra intensa */
+    transform: scale(1.05); /* Leve ampliação */
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    /* Ajuste da seção de destaques para telas pequenas */
-    .highlights {
-        flex-direction: column; /* Empilha os itens na vertical */
-        gap: 20px;
-    }
-
-    .highlight-item {
-        width: 100%; /* Garante que o item ocupe a largura completa */
-    }
-
-    /* Ajuste de padding e layout da seção */
-    .content-section {
-        padding: 30px 15px; /* Menos padding nas laterais */
-    }
-
-    .section-title {
-        font-size: 28px; /* Ajusta o tamanho da fonte */
-    }
-
-    .section-subtitle {
-        font-size: 16px; /* Ajusta o tamanho da fonte */
-    }
+/* Links âncoras */
+a {
+    text-decoration: none;
+    color: inherit;
 }
-
-.testimonials-section {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #0C456f,#1A97F0;
-    margin-top: 20px;
-}
-
-.testimonials-section h3 {
-    color: var(--cor-primaria);
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
-
-.testimonials-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 0 10px;
-}
-
-.testimonial {
-    background-color: rgba(255, 255, 255, 0.849);
-    color: var(--color-texto);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-.testimonial-text {
-    font-style: italic;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-.testimonial-name {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    color: var(--cor-primaria);
-}
-
-
-/* Estilo para a seção de impacto em números */
-.impacto-numeros {
-    text-align: center;
-    margin-top: 50px;
-    padding-bottom: 30px;
-    background-color: #F4F4F4;
-    margin-bottom: 50px;
-}
-
-.impacto-numeros h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.impacto-numeros p {
-    font-size: 18px;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/*
-.parcerias {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.parcerias h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.parcerias-logos {
-    display: flex;
-    justify-content: center;
-    gap: 30px; /* Espaçamento entre as logos 
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.parcerias-logos a {
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.parcerias-logos a:hover {
-    transform: scale(1.1); /* Efeito de aumento no hover 
-}
-
-.parcerias-logos img {
-    max-width: 150px;
-    height: auto;
-    transition: opacity 0.3s ease;
-}
-
-.parcerias-logos img:hover {
-    opacity: 0.7; /* Efeito visual para indicar interação 
-}*/
-
 
 /* Seção do slider */
 .image-slider-section {
     text-align: center;
     margin-top: 50px;
     padding-bottom: 50px;
-
 }
 
 /* Título da seção */
@@ -462,7 +339,7 @@ html {
 
 .image-slider-controls button {
     padding: 10px;
-    background-color: var(--colot-neutral-6);
+    background-color: #ff8c00;
     border: none;
     border-radius: 50%;
     color: white;
@@ -474,619 +351,486 @@ html {
 
 /* Estilo dos botões ao passar o mouse */
 .image-slider-controls button:hover {
-    background-color: var(--color-neutral-1);
-}
-
-/* Estilo geral do card */
-#gradu{
-    background-color: white;
-}
-
-.card-curso {
-    max-width: 350px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    margin: 20px auto;
-    background-color: #F4F4F4;
-}
-
-
-/* Responsividade para o slider e cards em telas pequenas */
-@media (max-width: 768px) {
-    .image-slider-wrapper {
-        width: 100%; /* Aumenta a largura do slider para ocupar toda a tela */
-    }
-
-    .image-slider-section h3 {
-        font-size: 20px; /* Ajusta o tamanho do título */
-    }
-
-    .card-curso {
-        width: 100%; /* Faz com que o card ocupe toda a largura disponível */
-        max-width: none; /* Remove o limite de largura */
-    }
-}
-/* Banner superior */
-.card-banner {
-    background: linear-gradient(135deg, #0C4470, #002f6c);
-    color: white;
-    padding: 20px;
-    text-align: left;
-    position: relative;
-    border-radius: 10px; /* Borda arredondada para suavizar o visual */
-}
-
-.tipo-curso {
-    display: inline-block;
-    background-color: #002f6c;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.nome-curso {
-    margin: 50px 0 10px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    line-height: 1.2; /* Melhorando a legibilidade do título */
-}
-
-.modalidades {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.modalidades li em {
-    font-style: italic;
-    font-size: 12px;
-    opacity: 0.8;
-}
-
-/* Detalhes do card */
-.card-detalhes {
-    padding: 20px;
-    text-align: left;
-    background-color: #f9f9f9; /* Fundo mais suave para contraste */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adicionando sombra para destacar */
-}
-
-.destaque {
-    display: inline-block;
-    background-color: #ffa94d;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.duracao,
-.turno {
-    font-size: 16px;
-    color: #333;
-    margin: 5px 0;
-}
-
-/* Botão de detalhes */
-.btn-detalhes {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffa94d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-    text-transform: lowercase;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Adicionando efeito de transição */
-}
-
-.btn-detalhes span {
-    margin-left: 10px;
-    font-size: 18px;
-}
-
-.btn-detalhes:hover {
-    background-color: #ff6f00;
-    transform: translateY(-2px); /* Efeito sutil de levantar o botão */
-}
-
-/* Estilo do botão de detalhes no foco (acessibilidade) */
-.btn-detalhes:focus {
-    outline: 2px solid #ffa94d;
-    outline-offset: 4px;
-}
-
-/* Estilo do título */
-.h1gra {
-    text-align: center;
-}
-
-/* Seção de pós-graduação */
-.pos-graduacao-secao {
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Texto do título da seção */
-.cabecalho-pos h2 {
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 10px;
-    font-weight: bold; /* Destacando o título */
-}
-
-.cabecalho-pos p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 30px;
-    line-height: 1.5;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Contêiner para organizar os cards */
-.pos-container-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-/* Card do curso */
-.pos-card {
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Banner superior */
-.pos-card-banner {
-    background: linear-gradient(135deg, #0C456f, #1A97F0);
-    color: white;
-    padding: 20px;
-    text-align: left;
-    position: relative;
-    border-bottom: 3px solid #082C46; /* Borda inferior para separar a área do banner */
-}
-
-.pos-tipo-curso {
-    display: inline-block;
-    background-color: #082C46;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    top: 10px;
-    left: 10px;
-    z-index: 10; /* Garantir que o tipo de curso fique sobre outros elementos */
-}
-
-.pos-nome-curso {
-    margin: 50px 0 10px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    line-height: 1.2; /* Melhorando o espaçamento do título */
-}
-
-.pos-modalidades {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-/* Estilo do card - efeito de hover */
-.pos-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Ajuste no layout do cartão */
-.pos-card-banner h3 {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.pos-card-banner p {
-    font-size: 14px;
-    line-height: 1.4;
-    opacity: 0.8;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-}
-/* Detalhes do card */
-.pos-card-detalhes {
-    padding: 20px;
-    text-align: left;
-}
-
-.pos-destaque {
-    display: inline-block;
-    background-color: #ffa94d;
-    color:iwhite;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.pos-duracao,
-.pos-turno {
-    font-size: 16px;
-    color: #333;
-    margin: 5px 0;
-}
-
-/* Botão de detalhes */
-.pos-btn-detalhes {
-    display: inline-flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    padding: 10px 40px;
-    background-color: #ffa94d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 15px;
-    text-transform: lowercase;
-    transition: background-color 0.3s ease;
-    width: 100%; /* Isso faz o botão ocupar toda a largura disponível */
-    text-align: center; /* Garante que o texto seja centralizado dentro da área */
-}
-
-
-.pos-btn-detalhes span {
-    margin-left: 10px;
-    font-size: 18px;
-}
-
-.pos-btn-detalhes:hover {
-    background-color: #ff6f00;
-}
-
-/* Seção de pós-graduação */
-.pos-graduacao-secao {
-    padding: 40px 20px;
-    background-color: #F4F4F4;
-    color: #333;
-    text-align: center;
-}
-
-/* Cabeçalho da seção */
-.cabecalho-pos h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #082C46;
-    margin-bottom: 20px;
-}
-
-.subtitulo {
-    font-size: 18px;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-}
-
-/* Benefícios da pós-graduação */
-.beneficios {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 30px;
-}
-
-.beneficio-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    width: 250px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.beneficio-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.beneficio-item h3 {
-    font-size: 22px;
-    font-weight: bold;
-    color: var(--color-neutral-1);
-    margin-bottom: 10px;
-}
-
-.beneficio-item p {
-    font-size: 16px;
-    color: #777;
-    line-height: 1.5;
-}
-
-/* Conclusão */
-.conclusao p {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-top: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    line-height: 1.6;
-}
-
-/* Seção de Pós-graduação */
-.pos-graduacao-secao {
-    padding: 40px 20px;
-    background-color: #f7f7f7;
-    color: #333;
-    text-align: center;
-}
-
-/* Cabeçalho da seção */
-.cabecalho-pos h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--color-neutral-1);
-    margin-bottom: 20px;
-}
-
-.subtitulo {
-    font-size: 18px;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-}
-/* CTA (Call to Action) */
-.cta-pos {
-    background-color: var(--color-neutral-1);
-    color: #fff;
-    padding: 40px 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-    text-align: center;
-}
-
-.cta-pos h3 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.cta-pos p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    background-color: #0C4470;
 }
 
 /* Seção de Cursos Livres */
 .cursos-livres-secao {
-    margin-top: 20px;
-    padding: 40px 20px;
-    background-color: #f7f7f7;
+    background-color: #f7f9fb;  /* Fundo levemente acinzentado para contraste */
+    padding: 50px 20px;
+    font-family: 'Poppins', sans-serif;
     color: #333;
     text-align: center;
-    min-height: 300px;
-}
-
-/* Cabeçalho da seção */
-.cabecalho-cursos-livres h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--color-neutral-1);
-    margin-bottom: 20px;
-}
-
-.subtitulo {
-    font-size: 18px;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto 30px;
     line-height: 1.6;
+    border-radius: 8px; /* Suaviza os cantos */
 }
 
-/* Módulos do curso */
-.modulos {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 30px;
-}
-
-.modulo-item {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 30px;
-    width: 250px;
+/* Cabeçalho da Seção */
+.cabecalho-cursos-livres h2 {
+    font-size: 2rem; /* Título mais expressivo */
+    font-weight: 600;
+    color: #3F7EA6; /* Azul profundo */
     margin-bottom: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transform: scale(1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    text-align: left;
 }
 
-.modulo-item:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(106, 27, 154, 0.1);
-    border-radius: 15px;
-    z-index: -1;
+.cabecalho-cursos-livres .subtitulo {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 600px; /* Limita a largura para maior foco */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.modulo-item:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.modulo-item h3 {
-    font-size: 22px;
-    font-weight: bold;
-    color: var(--color-neutral-1);
-    margin-bottom: 15px;
-}
-
-.modulo-item p {
-    font-size: 16px;
-    color: #777;
-    line-height: 1.5;
-}
-
-/* Seção de Destaques */
+/* Destaques */
 .destaques {
     display: flex;
     justify-content: center;
-    gap: 30px;  /* Espaço entre os cards */
+    gap: 20px;
+    flex-wrap: wrap;
     margin-bottom: 40px;
 }
 
 .destaque-item {
-    background-color: #f4f4f4;
-    padding: 20px;
-    width: 200px;  /* Tamanho fixo para os cards */
+    background-color: #3F7EA6; /* Azul profundo */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra mais suave */
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Compacto e elegante */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff; /* Texto claro */
 }
 
 .destaque-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.icone-destaque {
-    background-color: var(--colot-neutral-6);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Realce no hover */
+    background-color: #559abf; /* Azul mais claro */
 }
 
 .icone-destaque img {
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    filter: invert(100%); /* Ícones em branco */
 }
 
-.destaque-item h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
+.destaque-item h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+/* Módulos do Curso */
+.modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.modulo-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modulo-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modulo-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #3F7EA6; /* Azul profundo */
     margin-bottom: 10px;
 }
 
-.destaque-item p {
-    font-size: 14px;
-    color: #777;
-    line-height: 1.4;
+.modulo-item p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.5;
 }
 
-/* Responsividade: Ajustes para dispositivos móveis */
-@media (max-width: 768px) {
-    .modulos {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .modulo-item {
-        width: 80%;
-    }
-
-    .destaques {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .destaque-item {
-        width: 80%;
-    }
-
-    .cta-pos {
-        padding: 30px 15px;
-    }
-}
-/* CTA (Call to Action) */
+/* Call to Action */
 .cta-cursos-livres {
-    background-color: var(--color-neutral-1);
-    color: #fff;
-    padding: 40px 20px;
-    border-radius: 10px;
-    margin-top: 30px;
+    background-color: #3F7EA6; /* Azul profundo */
+    padding: 30px 20px;
+    border-radius: 12px;
+    color: #ffffff;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
 }
 
 .cta-cursos-livres h3 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 .cta-cursos-livres p {
-    font-size: 18px;
+    font-size: 1rem;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
 .btn-cta {
-    background-color: #ffa94d;
-    color: #fff;
-    padding: 12px 24px;
-    font-size: 18px;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
     display: inline-block;
-    transition: background-color 0.3s ease;
+    padding: 12px 30px;
+    background-color: #ffffff; /* Botão branco */
+    color: #3F7EA6; /* Azul profundo */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-cta:hover {
-    background-color: var(--colot-neutral-6);
+    background-color: #ffffff;
+    color: #559abf; /* Azul mais claro no hover */
+    transform: scale(1.05);
+}
+
+
+/* Seção Graduação */
+#graduacao {
+    padding: 40px;
+    background-color: var(--cor-fundo);
+}
+
+#graduacao h1 {
+    font-size: 32px;
+    color: var(--cor-principal);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Card do Curso */
+.card-curso {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 12px;
+}
+
+/* Parte esquerda - Sobre o Curso */
+.card-info-esquerda {
+    flex: 1;
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-info-esquerda h2 {
+    font-size: 28px;
+    color: #003366;
+    margin-bottom: 5px;
+}
+
+.card-info-esquerda p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Parte direita - Informações adicionais */
+.card-info-direita {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    background-color: #e1e1e1;
+    padding: 5px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 18px;
+    color: #003366;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+.card-content {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Botões */
+.btn-detalhes {
+    background-color: #003366;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+}
+
+.btn-detalhes:hover {
+    background-color: #00509e;
+}
+
+
+/* Estilo para a seção de Pós-Graduação */
+.pos-graduacao-secao {
+    padding: 2rem;
+    background-color: var(--cor-fundo);
+    text-align: center;
+}
+
+.pos-graduacao-secao h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.pos-graduacao-secao .subtitulo {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.cta-pos {
+    background-color: var(--cor-principal); /* Fundo azul para destaque */
+    color: white; /* Texto em branco */
+    padding: 1.5rem 2rem; /* Espaçamento interno */
+    margin: 2rem auto; /* Espaçamento externo para separação */
+    border-radius: 8px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    max-width: 1200px; /* Limita a largura */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.cta-pos h3 {
+    font-size: 1.8rem; /* Tamanho maior para título */
+    margin-bottom: 0.5rem; /* Espaçamento inferior */
+}
+
+.cta-pos p {
+    font-size: 1.2rem; /* Tamanho do texto */
+    margin: 0; /* Remove margens padrão */
+}
+
+/* Benefícios da Pós-Graduação */
+.beneficios {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin: 3rem 0;
+}
+
+.beneficio-item {
+    flex: 1 1 250px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.beneficio-item h3 {
+    font-size: 1.2rem;
+    color: #004aad;
+    margin-bottom: 0.5rem;
+}
+
+.beneficio-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.beneficio-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Contêiner de Cards */
+.pos-container-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Estilo dos Cards */
+.pos-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.pos-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pos-card-banner {
+    background: linear-gradient(135deg, #0C456f, #1A97F0);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.pos-card-banner .pos-tipo-curso {
+    font-size: 0.9rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #0C456f, #1A97F0);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.pos-card-banner .pos-nome-curso {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+}
+
+.pos-card-banner .modalidades li {
+  list-style: none;
+  text-align: center;
+  margin-right: 35px;
+}
+
+.pos-card-detalhes {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.pos-card-detalhes .pos-destaque {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #004aad;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.pos-card-detalhes .pos-duracao,
+.pos-card-detalhes .pos-turno {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.pos-card-detalhes .pos-btn-detalhes {
+    display: inline-block;
+    background-color: var(--cor-destaque);
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pos-card-detalhes .pos-btn-detalhes:hover {
+    background-color: #ffa600;
+}
+/*Depoimentos*/
+.depoimentos-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 0;
+  }
+  
+  .depoimentos-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .depoimentos-carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .depoimento {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 0 calc(33.333% - 20px); /* 3 depoimentos visíveis */
+    box-sizing: border-box;
+  }
+  
+  .depoimento-text {
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .autor {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666666;
+  }
+  
+  button.prev, 
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  z-index: 10; /* Garante que fique acima de todos os outros elementos */
+}
+
+button.prev {
+  left: -1%;
+}
+
+button.next {
+  right: -1%;
+}
+
+button.prev:hover, 
+button.next:hover {
+  background-color: rgba(173, 173, 173, 0.411);
+}
+
+  
+
+.depoimento-text{
+    max-width: auto;
 }
 
 /* Estilo geral da seção FAQ, Blog e Central de Atendimento */
@@ -1094,6 +838,10 @@ html {
     padding: 50px 20px;
     font-family: Arial, sans-serif;
     text-align: center;
+    display: flex;
+    flex-wrap: nowrap; /* Impede que os elementos se movam para a próxima linha */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    gap: 20px; /* Espaço entre os itens */
 }
 
 /* Título principal da seção */
@@ -1102,15 +850,17 @@ html {
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
+    width: 100%; /* Garante que o título ocupe toda a largura */
 }
 
 /* Blocos FAQ, Blog e Central de Atendimento */
 .faq, .blog-educacional, .central-atendimento {
     background-color: #f9f9f9;
     padding: 30px;
-    margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 32%; /* Ajusta a largura para 32% para que fiquem lado a lado */
+    min-width: 280px; /* Define um tamanho mínimo para os blocos */
 }
 
 /* Estilo dos textos dentro de cada bloco */
@@ -1122,7 +872,7 @@ html {
 
 /* Botões de CTA */
 button.cta-faq, button.cta-blog, button.cta-atendimento {
-    background-color: var(--color-neutral-1);
+    background-color: var(--cor-principal);
     color: white;
     font-size: 16px;
     padding: 12px 25px;
@@ -1135,7 +885,7 @@ button.cta-faq, button.cta-blog, button.cta-atendimento {
 }
 
 button.cta-faq:hover, button.cta-blog:hover, button.cta-atendimento:hover {
-    background-color: var(--color-neutral-0);
+    background-color: var(--cor-principal);
 }
 
 /* Contêiner para os botões, alinhando-os na mesma linha */
@@ -1146,37 +896,17 @@ button.cta-faq:hover, button.cta-blog:hover, button.cta-atendimento:hover {
     margin-top: 20px;
 }
 
-/* Estilo para a disposição dos blocos */
-.faq-blog-atendimento > div {
-    max-width: 600px;
-    margin: 0 auto;
-}
-/* Responsividade para telas maiores */
-@media (min-width: 768px) {
-    .faq-blog-atendimento {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        text-align: left;
-    }
-
-    .faq, .blog-educacional, .central-atendimento {
-        width: 30%;
-        padding: 20px;
-    }
-}
-
 /* Estilo da seção de polos */
 .polos {
     padding: 40px;
-    background-color: #f4f4f4;
+    background-color: var(--cor-texto);
 }
 
 .polos h2 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 30px;
-    color: #333;
+    color: #ffffff;
 }
 
 /* Contêiner dos polos - agora são dispostos lado a lado */
@@ -1199,10 +929,12 @@ button.cta-faq:hover, button.cta-blog:hover, button.cta-atendimento:hover {
     text-align: center;
 }
 
+
+
 /* Estilo para o polo selecionado */
 .polo.selected {
-    background-color: #e0f7fa; /* Cor de fundo do polo selecionado */
-    border: 2px solid --color-neutral-1; /* Borda mais escura para destaque */
+    background-color: #ffe9cf; /* Cor de fundo do polo selecionado */
+    border: 2px solid #FF8C00; /* Borda mais escura para destaque */
 }
 
 .polo h3 {
@@ -1211,7 +943,8 @@ button.cta-faq:hover, button.cta-blog:hover, button.cta-atendimento:hover {
 }
 
 .polo p {
-    font-size: 16px;
+    text-align: left;
+    font-size: 100%;
     color: #555;
 }
 
@@ -1250,104 +983,76 @@ button.cta-faq:hover, button.cta-blog:hover, button.cta-atendimento:hover {
     padding: 20px;
 }
 
-/* Estilo global para títulos */
-h2 {
-    text-align: center;
-}
-/* Estilo geral do rodapé */
+/* Estilos gerais para o footer */
 footer {
-    background: linear-gradient(135deg, #f4f4f4 0%, #e0e0e0 100%); /* Efeito degradê */
-    padding: 40px 20px;
+    background-color: #003366;
+    color: white;
+    padding: 20px;
     text-align: center;
-    font-family: 'Arial', sans-serif;
 }
 
-/* Contêiner principal do rodapé */
 .footer-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-/* Estilo da seção de contato */
+/* Contato */
 .contact p {
-    margin-bottom: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+    margin: 5px 0;
 }
 
-/* Formulário de contato */
 .contact form {
     display: flex;
+    gap: 10px;
     justify-content: center;
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.contact input {
-    padding: 12px;
-    width: 70%;
-    margin-right: 10px;
-    border: 2px solid #ccc;
+.contact input[type="email"] {
+    padding: 8px;
+    font-size: 14px;
     border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.contact input:focus {
-    border-color: #5f6368; /* Cor de borda ao focar */
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+    border: none;
+    width: 200px;
 }
 
 .contact button {
-    padding: 12px 25px;
-    background-color: var(--color-neutral-0);
-    color: #fff;
+    padding: 8px 15px;
+    background-color: var(--cor-destaque2);
+    color: #003366;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .contact button:hover {
-    background-color: var(--color-neutral-1); /* Cor mais escura no hover */
+    background-color: var(--cor-destaque);
 }
 
 /* Redes sociais */
-.social-media {
-    margin-top: 30px;
-}
-
 .social-media a {
-    margin: 0 20px;
-    transition: transform 0.3s ease;
-    text-decoration: none; /* Remove o sublinhado */
-}
-
-.social-media a:hover {
-    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
+    margin: 0 10px;
 }
 
 .social-media img {
-    width: 35px;
-    height: 35px;
-    transition: transform 0.3s ease;
-}
-
-.social-media img:hover {
-    transform: rotate(-20deg); /* Gira o ícone ao passar o mouse */
+    width: 30px;
+    height: 30px;
 }
 
 /* Direitos reservados */
 .reserved {
-    margin-top: 30px;
+    margin-top: 20px;
+    font-size: 12px;
 }
 
-.reserved p {
-    font-size: 14px;
-    color: #777; /* Texto com tom mais claro */
-}
+
+
+
+
+
+

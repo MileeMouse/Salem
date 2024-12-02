@@ -1,3 +1,42 @@
+function navigateToOption() {
+    // Obtém o valor da opção selecionada
+    const selectedOption = document.getElementById('portal-options').value;
+
+    if (selectedOption) {
+        // Redireciona para a URL correspondente
+        window.location.href = selectedOption;
+    } else {
+        // Caso nenhuma opção tenha sido selecionada
+        alert('Por favor, selecione uma opção antes de prosseguir.');
+    }
+}
+
+let currentIndex = 0;
+const depoimentos = document.querySelectorAll('.depoimento');
+const totalDepoimentos = depoimentos.length;
+
+document.querySelector('.next').addEventListener('click', () => {
+    if (currentIndex < totalDepoimentos - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateCarousel();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalDepoimentos - 1;
+    }
+    updateCarousel();
+});
+
+function updateCarousel() {
+    const offset = -currentIndex * 100;
+    document.querySelector('.depoimentos-carousel').style.transform = `translateX(${offset}%)`;
+}
 
 // Imagens
 // Configuração do slider
@@ -26,21 +65,6 @@ prevButton.addEventListener("click", () => {
     updateSlider();
 });
 
-
-// Seleciona todos os polos
-const polos = document.querySelectorAll('.polo');
-
-// Adiciona o evento de clique a cada polo
-polos.forEach(polo => {
-    polo.addEventListener('click', () => {
-        // Remove a classe 'selected' de todos os polos
-        polos.forEach(p => p.classList.remove('selected'));
-
-        // Adiciona a classe 'selected' ao polo clicado
-        polo.classList.add('selected');
-    });
-});
-
 // Alterador de mapas
 
 var mapas = [
@@ -55,4 +79,10 @@ function mudarMapa(index) {
     document.getElementById('mapa_iframe').src = mapas[index];
 }
 
-  
+function selecionarPolo(element) {
+    // Remove a classe 'selected' de todos os polos
+    document.querySelectorAll('.polo').forEach(polo => polo.classList.remove('selected'));
+
+    // Adiciona a classe 'selected' ao polo clicado
+    element.classList.add('selected');
+  }
